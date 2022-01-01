@@ -2,7 +2,6 @@ import React, {FC, memo} from 'react';
 import {Modal, Text, TouchableOpacity, View} from 'react-native';
 import styles from './add-movie-modal.styles';
 
-import {RNCamera} from 'react-native-camera';
 import TextInputCustom from '../../../../components/text-input/text-input.component';
 
 type Props = {
@@ -45,17 +44,6 @@ const AddMovieModal: FC<Props> = props => {
         <TextInputCustom onChange={setOverview} placeholder="overview" />
         <TextInputCustom onChange={setReleaseDate} placeholder="release_date" />
         <TextInputCustom onChange={setRating} placeholder="rating" />
-        <RNCamera
-          type={RNCamera.Constants.Type.back}
-          flashMode={RNCamera.Constants.FlashMode.on}
-          androidCameraPermissionOptions={{
-            title: 'Permission to use camera',
-            message: 'We need your permission to use your camera',
-            buttonPositive: 'Ok',
-            buttonNegative: 'Cancel',
-          }}
-          captureAudio={false}
-        />
         <View style={{flexDirection: 'row'}}>
           <TouchableOpacity
             onPress={LaunchImageGallery}

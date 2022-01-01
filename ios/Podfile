@@ -12,7 +12,6 @@ target 'moviesapp' do
     :hermes_enabled => false
   )
 
-  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
   target 'moviesappTests' do
     inherit! :complete
