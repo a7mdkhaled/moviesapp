@@ -1,3 +1,5 @@
+import {MoviesListMapper} from '../services/mappers/movies-list.mapper';
+
 //fetching movies
 
 interface Fetching {
@@ -11,12 +13,14 @@ export const fetchMovies = async (
 ) => {
   state.movies.loading = true;
   const movies = await effects.api.fetchMovies(params);
-  // movies && MoviesListMapper.mapToUiModel(movies);
-  if (state.movies.list) {
-    state.movies.list = [...state.movies.list, ...movies.results];
-    state.movies.loading = false;
-  } else {
-    state.movies.list = movies.results;
+  if (movies) {
+    const mappedData = MoviesListMapper.mapToUiModel(movies);
+    if (state.movies.list) {
+      state.movies.list = [...state.movies.list, ...Object.values(mappedData)];
+      state.movies.loading = false;
+    } else {
+      state.movies.list = mappedData;
+    }
   }
   state.movies.loading = false;
 };

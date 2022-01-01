@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect, FC} from 'react';
+import React, {useState, useEffect, FC, memo} from 'react';
 import {
   View,
   Text,
@@ -32,6 +32,7 @@ const Home: FC = () => {
   const {fetchMovies, addToFavList} = useActions();
   const {movies} = useOvermind();
   const {list, loading, favoriteList} = movies;
+
   useEffect(() => {
     fetchMoreMovies();
   }, []);
@@ -154,8 +155,6 @@ const Home: FC = () => {
       },
     };
     launchCamera(options, response => {
-      console.warn(response);
-
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
@@ -228,4 +227,4 @@ const Home: FC = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

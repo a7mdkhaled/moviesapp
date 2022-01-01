@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import styles from './header-button.styles';
 
@@ -17,4 +17,4 @@ function HeaderButtons({title, onPress = () => null, active}: Props) {
   );
 }
 
-export default HeaderButtons;
+export default memo(HeaderButtons);

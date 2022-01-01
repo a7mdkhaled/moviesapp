@@ -17,18 +17,7 @@ export default StyleSheet.create({
     borderRadius: 100 / 2,
   },
   plusText: {fontSize: calcFont(30), textAlign: 'center'},
-  textInput: {
-    color: 'black',
-    fontWeight: 'bold',
-    borderWidth: 1,
-    borderColor: 'gray',
-    height: calcHeight(50),
-    width: calcWidth(300),
-    borderRadius: 12,
-    paddingLeft: 12,
-    marginBottom: calcHeight(10),
-    marginTop: calcHeight(10),
-  },
+
   modalContainer: {
     height: '80%',
     marginTop: 'auto',

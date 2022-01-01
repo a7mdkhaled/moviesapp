@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import styles from './float-button.styles';
 
@@ -13,4 +13,4 @@ const FloatButton: FC<FloatButtonProps> = ({setAddToListModal}) => {
   );
 };
 
-export default FloatButton;
+export default memo(FloatButton);

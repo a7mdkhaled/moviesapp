@@ -1,8 +1,9 @@
-import React, {FC} from 'react';
-import {Modal, Text, TouchableOpacity, View, TextInput} from 'react-native';
+import React, {FC, memo} from 'react';
+import {Modal, Text, TouchableOpacity, View} from 'react-native';
 import styles from './add-movie-modal.styles';
 
 import {RNCamera} from 'react-native-camera';
+import TextInputCustom from '../../../../components/text-input/text-input.component';
 
 type Props = {
   visible: boolean;
@@ -17,23 +18,7 @@ type Props = {
   setRating: () => null;
 };
 
-type TextInputComponentProps = {
-  placeholder: string;
-  onChange: () => null;
-};
-
-export const TextInputComponent = ({
-  placeholder,
-  onChange,
-}: TextInputComponentProps) => {
-  return (
-    <TextInput
-      placeholder={placeholder}
-      onChangeText={text => onChange(text)}
-      style={styles.textInput}
-    />
-  );
-};
+/** modal to add the movies to the favorite list */
 
 const AddMovieModal: FC<Props> = props => {
   const {
@@ -56,13 +41,10 @@ const AddMovieModal: FC<Props> = props => {
         </TouchableOpacity>
         <Text>Add Movie</Text>
 
-        <TextInputComponent onChange={setTitle} placeholder="Title" />
-        <TextInputComponent onChange={setOverview} placeholder="overview" />
-        <TextInputComponent
-          onChange={setReleaseDate}
-          placeholder="release_date"
-        />
-        <TextInputComponent onChange={setRating} placeholder="rating" />
+        <TextInputCustom onChange={setTitle} placeholder="Title" />
+        <TextInputCustom onChange={setOverview} placeholder="overview" />
+        <TextInputCustom onChange={setReleaseDate} placeholder="release_date" />
+        <TextInputCustom onChange={setRating} placeholder="rating" />
         <RNCamera
           type={RNCamera.Constants.Type.back}
           flashMode={RNCamera.Constants.FlashMode.on}
@@ -94,4 +76,4 @@ const AddMovieModal: FC<Props> = props => {
   );
 };
 
-export default AddMovieModal;
+export default memo(AddMovieModal);
