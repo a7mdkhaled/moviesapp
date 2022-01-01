@@ -5,6 +5,8 @@
 ### IOS
 yarn && cd ios && pod install && cd .. && npx react-native run-ios
 
+Make sure you're on IOS real device to test the camera, gallery can be tested on the simulator.
+
 ### Android
 yarn && cd ios && npx react-native run-android
 _______________________________________________
