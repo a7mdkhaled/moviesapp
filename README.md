@@ -19,7 +19,12 @@ _______________________________________________
 ### files:
     - container-name.container.js
     - container-name.styles.js
-  
+    - Component
+        - component-name
+         - component-name.component.js
+         - component-name.styles.js
+
+    ${name}.test.js can be added for the test cases.
 
 ### Responsibility:
     - API calls through data layer
