@@ -3,20 +3,23 @@
 ### To run the project
 
 ### IOS
+
 yarn && cd ios && pod install && cd .. && npx react-native run-ios
 
 Make sure you're on IOS real device to test the camera, gallery can be tested on the simulator.
 
 ### Android
+
 yarn && cd ios && npx react-native run-android
-_______________________________________________
+
+---
 
 ## Some Information about the structure
-
 
 ### path: App/containers/${container-name}
 
 ### files:
+
     - container-name.container.js
     - container-name.styles.js
     - Component
@@ -27,8 +30,8 @@ _______________________________________________
     ${name}.test.js can be added for the test cases.
 
 ### Responsibility:
-    - API calls through data layer
 
+    - API calls through data layer
 
 ### sample for callbacks
 
@@ -57,15 +60,10 @@ _______________________________________________
                 props.childClicked()
             }}>Click me!
             </Button>
-        )  
+        )
     }
 
-
-
-### Mappers are required in apis to make sure we have the right types and perfect name convention, I didn't include any since there is no much apis work here
-
-
-
+### Movies Mapper can be found under App/services/mappers
 
 ### Api Service
 
@@ -79,7 +77,3 @@ _______________________________________________
 ### Responsibility:
 
 handle api urls
-
-
-
-
